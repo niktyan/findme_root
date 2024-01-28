@@ -1,0 +1,880 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<!--
+<div class="div">
+      <header class="header">
+        <h1 class="h1">Что такое FindMe?</h1>
+        <h2 class="h2">
+          FindMe - это некоммерческий проект, который помогает людям найти своих
+          близких: детей, отцов, бабушек, любимую собаку... Здесь вы можете
+          оставить анкету о потерявшемся человеке или питомце, а так же
+          посодействовать в поиске другим людям.
+        </h2>
+      </header>
+
+<header class="header1">
+  {% if request.user.is_authenticated %}
+        <div class="child"></div>
+        <nav class="parent">
+          <div class="div1">
+            <b class="b"><a href="{% url "dashboard" %}">Главная</a></b>
+            <b class="b"><a href="{% url "dashboard" %}">О нас</a></b>
+            <b class="b"><a href="{% url "dashboard" %}">Заявки</a></b>
+            <b class="b"><a href="{% url "dashboard" %}">Поиск</a></b>
+          </div>
+          <div class="div2">
+            <b class="b"><a href="{% url "dashboard" %}">Сообщения</a></b>
+            <div class="div3">
+              <div class="div4"></div>
+              <b class="b5">3</b>
+            </div>
+          </div>
+          {% if request.user.is_authenticated %}
+          <div class="div5"><a href="{% url "logout" %}">Выход</a></div>
+          {% endif %}
+        </nav>
+        <h1 class="findme">FindMe</h1>
+      </header>
+  {% endif %}
+
+      <div class="div6"></div>
+      <div class="div7">
+        <div class="item"></div>
+        <img
+          class="light-bulb-2-icon"
+          alt=""
+          src="{% static "publicexta/lightbulb-2@2x.png" %}"
+        />
+      </div>
+      <div class="div8">
+        <img class="inner" alt="" src="{% static "publicexta/ellipse-4.svg"%}" />
+        <img class="light-bulb-2-icon" alt="" src="{% static "publicexta/youth-2@2x.png"%}" />
+      </div>
+      <div class="div9">
+        <div class="item"></div>
+        <img
+          class="light-bulb-2-icon"
+          alt=""
+          src="{% static "publicexta/youngman-2@2x.png"%}"
+        />
+      </div>
+      <div class="div10">
+        <div class="item"></div>
+        <img class="light-bulb-2-icon" alt="" src="{% static "publicexta/image-11@2x.png"%}" />
+      </div>
+      <div class="div11">
+        <div class="inner">
+          <div class="item"></div>
+          <img class="light-bulb-2-icon" alt="" src="{% static "publicexta/years-1@2x.png"%}" />
+        </div>
+        <h3 class="h3">Работаем уже более 5-ти лет!</h3>
+      </div>
+      <h3 class="h31">Поможем советом!</h3>
+      <h3 class="h32">
+        <p class="p">Мы нашли около 7000</p>
+        <p class="p">людей!</p>
+      </h3>
+      <h3 class="h33">
+        <p class="p">Более 200</p>
+        <p class="p">волантёров!</p>
+      </h3>
+      <h3 class="h34">Абсолютно бесплатно!</h3>
+      <section class="section">
+        <img class="icon" alt="" src="{% static "publicexta/11.svg"%}" />
+        <img class="image-9-icon" alt="" src="{% static "publicexta/image-9@2x.png"%}" />
+        <img class="image-8-icon" alt="" src="{% static "publicexta/image-8@2x.png"%}" />
+        <img class="image-7-icon" alt="" src="{% static "publicexta/image-7@2x.png"%}" />
+        <img class="icon1" alt="" src="{% static "publicexta/11@2x.png"%}" />
+        <img class="image-10-icon" alt="" src="{% static "publicexta/image-10@2x.png"%}" />
+      </section>
+      <div class="div12">
+        <button class="button">
+          <b class="b6">Оставить анкету</b>
+        </button>
+        <button class="button1">
+          <b class="b6">Посмотреть анкеты</b>
+        </button>
+        <button class="button2">
+          <b class="b6">Я потерялся</b>
+        </button>
+      </div>
+    </div>
+-->
+
+
+<!--
+<div class="div">
+    {% if request.user.is_authenticated %}
+      <header class="header">
+        <h1 class="h1">Что такое FindMe?</h1>
+        <h2 class="h2">
+          FindMe - это некоммерческий проект, который помогает людям найти своих
+          близких: детей, отцов, бабушек, любимую собаку... Здесь вы можете
+          оставить анкету о потерявшемся человеке или питомце, а так же
+          посодействовать в поиске другим людям.
+        </h2>
+      </header>
+      <header class="header1">
+        <div class="child"></div>
+        <nav class="parent">
+          <nav class="nav">
+            <b class="b"><a href="{% url "dashboard" %}">Главная</a></b>
+            <b class="b"><a href="{% url "dashboard" %}">О нас</a></b>
+            <b class="b"><a href="{% url "dashboard" %}">Заявки</a></b>
+            <b class="b"><a href="{% url "dashboard" %}">Поиск</a></b>
+          </nav>
+          <div class="div1">
+            <b class="b"><a href="{% url "dashboard" %}">Сообщения</a></b>
+            <div class="div2">
+              <div class="div3"></div>
+              <b class="b5">3</b>
+            </div>
+          </div>
+            {% if request.user.is_authenticated %}
+          <div class="div4"><a href="{% url "logout" %}">Выход</a></div>
+            {% endif %}
+        </nav>
+        <h1 class="findme">FindMe</h1>
+      </header>
+    {% endif %}
+      <div class="div5"></div>
+      <div class="div6">
+        <div class="item"></div>
+        <img
+          class="light-bulb-2-icon"
+          alt=""
+          src="{% static "publicexta/lightbulb-2@2x.png" %}"
+        />
+
+        <h3 class="h3">Поможем советом!</h3>
+      </div>
+      <div class="div7">
+        <h3 class="h31">
+          <p class="p">Мы нашли около 7000</p>
+          <p class="p">людей!</p>
+        </h3>
+      </div>
+      <div class="vector-parent">
+        <img class="frame-child" alt="" src="{% static "publicexta/ellipse-4.svg" %}" />
+
+        <img class="youth-2-icon" alt="" src="{% static "publicexta/youth-2@2x.png" %}" />
+      </div>
+      <div class="div8">
+        <div class="item"></div>
+        <img
+          class="light-bulb-2-icon"
+          alt=""
+          src="{% static "publicexta/youngman-2@2x.png" %}"
+        />
+
+        <h3 class="h32">
+          <p class="p">Более 200</p>
+          <p class="p">волантёров!</p>
+        </h3>
+      </div>
+      <div class="div9">
+        <div class="item"></div>
+        <img class="light-bulb-2-icon" alt="" src="{% static "publicexta/image-11@2x.png" %}" />
+
+        <h3 class="h33">Абсолютно бесплатно!</h3>
+      </div>
+      <div class="div10">
+        <div class="ellipse-parent">
+          <div class="item"></div>
+          <img class="light-bulb-2-icon" alt="" src="{% static "publicexta/years-1@2x.png" %}" />
+        </div>
+        <h3 class="h34">Работаем уже более 5-ти лет!</h3>
+      </div>
+      <section class="section">
+        <div class="div11">
+          <img class="icon" alt="" src="{% static "publicexta/1.svg" %}" />
+
+          <img class="image-9-icon" alt="" src="{% static "publicexta/image-9@2x.png" %}" />
+
+          <img class="image-8-icon" alt="" src="{% static "publicexta/image-8@2x.png" %}" />
+
+          <img class="image-7-icon" alt="" src="{% static "publicexta/image-7@2x.png" %}" />
+
+          <img class="icon1" alt="" src="{% static "publicexta/11@2x.png" %}" />
+
+          <img class="image-10-icon" alt="" src="{% static "publicexta/image-10@2x.png" %}"/>
+        </div>
+      </section>
+      <div class="div12">
+        <button class="button">
+          <b class="b6">Оставить анкету</b>
+        </button>
+        <button class="button1">
+          <b class="b6">Посмотреть анкеты</b>
+        </button>
+        <button class="button2">
+          <b class="b6">Я потерялся</b>
+        </button>
+      </div>
+      <h1 class="h11">Что делать, если потерялся:</h1>
+      <div class="frame-parent">
+        <div class="wrapper">
+          <h3 class="h35">Ребёнок</h3>
+        </div>
+        <div class="container">
+          <h3 class="h35">Взрослый</h3>
+        </div>
+        <div class="frame">
+          <h3 class="h35">Питомец</h3>
+        </div>
+        <div class="frame-div">
+          <h3 class="h35">Я</h3>
+        </div>
+      </div>
+      <div class="div13"></div>
+      <div class="div14"></div>
+      <div class="div15"></div>
+      <section class="section1">
+        <div class="div16">
+          <div class="div17"></div>
+          <h3 class="h39">Оставьте заявку на FindMe.</h3>
+          <h3 class="h310">
+            <i class="i">Заполните анкету</i>
+            <span class="span">
+              максимально подробно, приложите несколько фотографий и ждите.
+              Волонтёры обязательно откликнуться на вашу заявку. Регулярно
+              заходите на сайт и проверяйте сообщения, люди могут оправить вам
+              какую-нибудь информацию или даже сообщить о нахождении
+              ребёнка.</span
+            >
+          </h3>
+        </div>
+        <div class="child1"></div>
+        <div class="div18">3</div>
+      </section>
+      <section class="section2">
+        <div class="div19">
+          <div class="div20"></div>
+          <h3 class="h39">Заключение.</h3>
+          <h3 class="h312">
+            Не паникуйте, более 90% пропавших детей находят. Не ждите 3-х дней,
+            обращайтесь в полицию сразу. Просите помощи у родных, у друзей, у
+            волонтёров, а так же на нашем сайте.
+          </h3>
+        </div>
+        <div class="child1"></div>
+        <div class="div21">!</div>
+      </section>
+      <section class="section3">
+        <div class="div22">
+          <div class="child1"></div>
+          <div class="div23">1</div>
+        </div>
+        <div class="div24">
+          <div class="div25">
+            <h3 class="h35">
+              Попытайтесь вспомнить, где он был в последний раз.
+            </h3>
+            <h3 class="h314">
+              Главное не паникуйте, обойдите место, где вы потеряли своего
+              ребёнка, поспрашивайте прохожих. Если у ребёнка с собой есть
+              телефон, то позвоните ему.
+            </h3>
+          </div>
+        </div>
+      </section>
+      <section class="section4">
+        <div class="div22">
+          <div class="child1"></div>
+          <div class="div27">2</div>
+        </div>
+        <div class="div28">
+          <h3 class="h35">Обратитесь за помощью</h3>
+          <h3 class="h316">
+            Чем быстрее вы обратитесь в полицию, тем больше шанс что его найдут.
+            Не ждите никаких 3-х дней, вам обязаны помочь в тот же день, в
+            который вы пришли. Так же не стесняйтесь просить помощь у близких и
+            у волонтёров.
+          </h3>
+        </div>
+      </section>
+      <section class="section5">
+        <div class="wrapper-">
+          <img class="icon2" alt="" src="{% static "publicexta/@2x.png" %}" />
+        </div>
+        <div class="div29">
+          <div class="div30">
+            <img
+              class="image-gallery-1-1"
+              alt=""
+              src="{% static "publicexta/imagegallery-1-1@2x.png" %}"
+            />
+
+            <div class="div4">добавить фото</div>
+          </div>
+          <div class="group">
+            <div class="div32">
+              <div class="rectangle-div"></div>
+              <div class="div33">*фото*</div>
+              <img
+                class="image-15-icon"
+                alt=""
+                src="{% static "publicexta/image-15@2x.png" %}"
+              />
+            </div>
+            <div class="div32">
+              <div class="rectangle-div"></div>
+              <div class="div33">*фото*</div>
+              <img
+                class="image-15-icon"
+                alt=""
+                src="{% static "publicexta/image-15@2x.png" %}"
+              />
+            </div>
+            <div class="div32">
+              <div class="rectangle-div"></div>
+              <div class="div33">*фото*</div>
+              <img
+                class="image-15-icon"
+                alt=""
+                src="{% static "publicexta/image-15@2x.png" %}"
+              />
+            </div>
+          </div>
+        </div>
+        <button class="button3">
+          <b class="b6">Отправить</b>
+        </button>
+        <div class="div38">
+          <div class="div39">
+            <div class="div40">Имя, фамилия</div>
+            <img class="vector-icon" alt="" src="{% static "publicexta/vector-1@2x.png" %}" />
+          </div>
+          <div class="div41">
+            <div class="div42">Возраст</div>
+            <img class="child7" alt="" src="{% static "publicexta/vector-2@2x.png" %}" />
+          </div>
+          <div class="div43">
+            <div class="div44">Место пропажи</div>
+            <img class="child8" alt="" src="{% static "publicexta/vector-2@2x.png" %}" />
+          </div>
+          <div class="div45">
+            <div class="div46">Условия пропажи</div>
+            <img class="child8" alt="" src="{% static "publicexta/vector-2@2x.png" %}" />
+          </div>
+          <div class="div47">
+            <div class="div48">Доп. информайция</div>
+            <img class="child10" alt="" src="{% static "publicexta/vector-2@2x.png" %}" />
+          </div>
+        </div>
+        <div class="div49">
+          <button class="button4">
+            <b class="b10">Ребёнок</b>
+          </button>
+          <button class="button5">
+            <div class="div50">Взрослый</div>
+          </button>
+          <button class="button6">
+            <div class="div50">Питомец</div>
+          </button>
+        </div>
+        <b class="b11">Кто потерялся?</b>
+        <h3 class="h317">Заполнить анкету</h3>
+      </section>
+      <div class="child11"></div>
+      <h3 class="h318">Лента объявлений:</h3>
+      <img class="ellipse-icon" alt="" src="{% static "publicexta/ellipse-14@2x.png" %}" />
+
+      <div class="child12"></div>
+      <div class="child13"></div>
+      <img class="rectangle-icon" alt="" src="{% static "publicexta/rectangle-29@2x.png" %}"/>
+
+      <div class="div52">
+        <div class="div4">
+          <p class="p">Викторов Иван</p>
+          <p class="p">27 лет</p>
+          <p class="p">Темные волосы, очки, голубые глаза</p>
+        </div>
+      </div>
+      <img class="icon3" alt="" src="{% static "publicexta/@2x.png" %}" />
+
+      <img class="icon4" alt="" src="{% static "publicexta/@2x.png" %}" />
+
+      <div class="div54">
+        Нам очень важно, чтобы каждый из вас посодействовал в поиске этих людей
+        и питомцев. Важен каждый час. Не теряйте времени и скорее сообщите нам,
+        если вы видели этих людей или животных.
+      </div>
+      <section class="section6">
+        <div class="wrapper-rectangle-15">
+          <img
+            class="wrapper-rectangle-15-child"
+            alt=""
+            src="{% static "publicexta/rectangle-15@2x.png" %}"
+          />
+        </div>
+        <img
+          class="unsplashrhh4dnfbwjo-icon"
+          alt=""
+          src="{% static "publicexta/unsplashrhh4dnfbwjo@2x.png" %}"
+        />
+
+        <div class="div55">
+          <h2 class="h21">Есть вопросы? Задавайте!</h2>
+          <div class="div56">
+            <div class="div57">Введите имя:</div>
+            <img class="line-icon" alt="" src="{% static "publicexta/line-6@2x.png" %}" />
+          </div>
+          <div class="e-mail">
+            <div class="div57">Введите e-mail:</div>
+          </div>
+          <img class="child14" alt="" src="{% static "publicexta/line-7@2x.png" %}"/>
+
+          <div class="div58">
+            <div class="div57">Введите телефон:</div>
+            <img class="child15" alt="" src="{% static "publicexta/line-8@2x.png" %}"/>
+          </div>
+          <div class="div60">
+            <div class="div57">Введите вопрос:</div>
+            <div class="line-div"></div>
+          </div>
+          <div class="div62">
+            <input class="rectangle-input" type="checkbox" />
+
+            <div class="div63">Я согласен на обработку персональных данных</div>
+          </div>
+          <div class="div64">
+            <div class="child16"></div>
+            <div class="div63">Я согласен с политикой конфиденциальности</div>
+          </div>
+          <div class="wrapper-1">
+            <img class="icon5" alt="" src="{% static "publicexta/@2x.png" %}"/>
+          </div>
+        </div>
+      </section>
+      <section class="section7">
+        <div class="div66">
+          <img class="child17" alt="" src="{% static "publicexta/vector-6@2x.png" %}" />
+
+          <img class="child18" alt="" src="{% static "publicexta/vector-6@2x.png" %}"/>
+
+          <div class="div67">
+            <div class="div68">Сотрудничество</div>
+            <div class="div69">Финансовое</div>
+            <div class="div70">Волонтёрское</div>
+          </div>
+          <div class="div71">
+            <div class="div72">Сообщество</div>
+            <div class="div73">
+              <img class="vk-icon" alt="" src="{% static "publicexta/vk@2x.png" %}"/>
+
+              <div class="b">vk</div>
+            </div>
+            <div class="div74">
+              <img class="vk-icon" alt="" src="{% static "publicexta/telegram@2x.png" %}"/>
+
+              <div class="b">telegram</div>
+            </div>
+            <div class="div75">
+              <img class="vk-icon" alt="" src="{% static "publicexta/gmail@2x.png" %}"/>
+
+              <div class="b">FindMe@gmail.com</div>
+            </div>
+          </div>
+          <div class="div76">
+            <div class="div77">Услуги</div>
+            <div class="div78">Заполнить анкету</div>
+            <div class="div79">Просмотреть анкеты</div>
+            <div class="div80">Оставить заявку на вопрос</div>
+          </div>
+        </div>
+        <div class="div81">
+          <h1 class="findme1">FindMe</h1>
+          <img class="child19" alt="" src="{% static "publicexta/vector-3@2x.png" %}" />
+        </div>
+        <div class="child20"></div>
+      </section>
+    </div>
+-->
+
+
+
+<div class="div">
+      <header class="header">
+        <h1 class="h1">Что такое FindMe?</h1>
+        <h2 class="h2">
+          FindMe - это некоммерческий проект, который помогает людям найти своих
+          близких: детей, отцов, бабушек, любимую собаку... Здесь вы можете
+          оставить анкету о потерявшемся человеке или питомце, а так же
+          посодействовать в поиске другим людям.
+        </h2>
+      </header>
+      <header class="header1">
+        <div class="child"></div>
+        <nav class="parent">
+          <nav class="nav">
+            <b class="b">Главная </b>
+            <b class="b">О нас</b>
+            <b class="b">Заявки</b>
+            <b class="b">Поиск</b>
+          </nav>
+          <div class="div1">
+            <b class="b">Сообщения</b>
+            <div class="div2">
+              <div class="div3"></div>
+              <b class="b5">3</b>
+            </div>
+          </div>
+          <div class="div4">Выход</div>
+        </nav>
+        <h1 class="findme">FindMe</h1>
+      </header>
+      <div class="div5"></div>
+      <div class="div6">
+        <div class="item"></div>
+        <img
+          class="light-bulb-2-icon"
+          alt=""
+          src="{% static "public/lightbulb-2@2x.png" %}"
+        />
+
+        <h3 class="h3">Поможем советом!</h3>
+      </div>
+      <div class="div7">
+        <h3 class="h31">
+          <p class="p">Мы нашли около 7000</p>
+          <p class="p">людей!</p>
+        </h3>
+      </div>
+      <div class="vector-parent">
+        <img class="frame-child" alt="" src="{% static "public/ellipse-4.svg" %}" />
+
+        <img class="youth-2-icon" alt="" src="{% static "public/youth-2@2x.png" %}"/>
+      </div>
+      <div class="div8">
+        <div class="item"></div>
+        <img
+          class="light-bulb-2-icon"
+          alt=""
+          src="{% static "public/youngman-2@2x.png" %}"
+        />
+
+        <h3 class="h32">
+          <p class="p">Более 200</p>
+          <p class="p">волантёров!</p>
+        </h3>
+      </div>
+      <div class="div9">
+        <div class="item"></div>
+        <img class="light-bulb-2-icon" alt="" src="{% static "public/image-11@2x.png" %}" />
+
+        <h3 class="h33">Абсолютно бесплатно!</h3>
+      </div>
+      <div class="div10">
+        <div class="ellipse-parent">
+          <div class="item"></div>
+          <img class="light-bulb-2-icon" alt="" src="{% static "public/years-1@2x.png" %}"/>
+        </div>
+        <h3 class="h34">Работаем уже более 5-ти лет!</h3>
+      </div>
+      <section class="section">
+        <div class="div11">
+          <img class="icon" alt="" src="{% static "public/1.svg" %}" />
+
+          <img class="image-9-icon" alt="" src="{% static "public/image-9@2x.png" %}"/>
+
+          <img class="image-8-icon" alt="" src="{% static "public/image-8@2x.png" %}"/>
+
+          <img class="image-7-icon" alt="" src="{% static "public/image-7@2x.png" %}"/>
+
+          <img class="icon1" alt="" src="{% static "public/11@2x.png" %}" />
+
+          <img class="image-10-icon" alt="" src="{% static "public/image-10@2x.png" %}"/>
+        </div>
+      </section>
+      <div class="div12">
+        <button class="button">
+          <b class="b6">Оставить анкету</b>
+        </button>
+        <button class="button1">
+          <b class="b6">Посмотреть анкеты</b>
+        </button>
+        <button class="button2">
+          <b class="b6">Я потерялся</b>
+        </button>
+      </div>
+      <h1 class="h11">Что делать, если потерялся:</h1>
+      <div class="frame-parent">
+        <div class="wrapper">
+          <h3 class="h35">Ребёнок</h3>
+        </div>
+        <div class="container">
+          <h3 class="h35">Взрослый</h3>
+        </div>
+        <div class="frame">
+          <h3 class="h35">Питомец</h3>
+        </div>
+        <div class="frame-div">
+          <h3 class="h35">Я</h3>
+        </div>
+      </div>
+      <div class="div13"></div>
+      <div class="div14"></div>
+      <div class="div15"></div>
+      <section class="section1">
+        <div class="div16">
+          <div class="div17"></div>
+          <h3 class="h39">Оставьте заявку на FindMe.</h3>
+          <h3 class="h310">
+            <i class="i">Заполните анкету</i>
+            <span class="span">
+              максимально подробно, приложите несколько фотографий и ждите.
+              Волонтёры обязательно откликнуться на вашу заявку. Регулярно
+              заходите на сайт и проверяйте сообщения, люди могут оправить вам
+              какую-нибудь информацию или даже сообщить о нахождении
+              ребёнка.</span
+            >
+          </h3>
+        </div>
+        <div class="child1"></div>
+        <div class="div18">3</div>
+      </section>
+      <section class="section2">
+        <div class="div19">
+          <div class="div20"></div>
+          <h3 class="h39">Заключение.</h3>
+          <h3 class="h312">
+            Не паникуйте, более 90% пропавших детей находят. Не ждите 3-х дней,
+            обращайтесь в полицию сразу. Просите помощи у родных, у друзей, у
+            волонтёров, а так же на нашем сайте.
+          </h3>
+        </div>
+        <div class="child1"></div>
+        <div class="div21">!</div>
+      </section>
+      <section class="section3">
+        <div class="div22">
+          <div class="child1"></div>
+          <div class="div23">1</div>
+        </div>
+        <div class="div24">
+          <div class="div25">
+            <h3 class="h35">
+              Попытайтесь вспомнить, где он был в последний раз.
+            </h3>
+            <h3 class="h314">
+              Главное не паникуйте, обойдите место, где вы потеряли своего
+              ребёнка, поспрашивайте прохожих. Если у ребёнка с собой есть
+              телефон, то позвоните ему.
+            </h3>
+          </div>
+        </div>
+      </section>
+      <section class="section4">
+        <div class="div22">
+          <div class="child1"></div>
+          <div class="div27">2</div>
+        </div>
+        <div class="div28">
+          <h3 class="h35">Обратитесь за помощью</h3>
+          <h3 class="h316">
+            Чем быстрее вы обратитесь в полицию, тем больше шанс что его найдут.
+            Не ждите никаких 3-х дней, вам обязаны помочь в тот же день, в
+            который вы пришли. Так же не стесняйтесь просить помощь у близких и
+            у волонтёров.
+          </h3>
+        </div>
+      </section>
+      <section class="section5">
+        <img class="icon2" alt="" src="{% static "public/3@2x.png" %}" />
+
+        <div class="div29">
+          <div class="div30">
+            <img
+              class="image-gallery-1-1"
+              alt=""
+              src="{% static "public/imagegallery-1-1@2x.png" %}"
+            />
+
+            <div class="div4">добавить фото</div>
+          </div>
+          <div class="group">
+            <div class="div32">
+              <div class="rectangle-div"></div>
+              <div class="div33">*фото*</div>
+              <img
+                class="image-15-icon"
+                alt=""
+                src="{% static "public/image-15@2x.png" %}"
+              />
+            </div>
+            <div class="div32">
+              <div class="rectangle-div"></div>
+              <div class="div33">*фото*</div>
+              <img
+                class="image-15-icon"
+                alt=""
+                src="{% static "public/image-15@2x.png" %}"
+              />
+            </div>
+            <div class="div32">
+              <div class="rectangle-div"></div>
+              <div class="div33">*фото*</div>
+              <img
+                class="image-15-icon"
+                alt=""
+                src="{% static "public/image-15@2x.png" %}"
+              />
+            </div>
+          </div>
+        </div>
+        <button class="button3">
+          <b class="b6">Отправить</b>
+        </button>
+        <div class="div38">
+          <div class="div39">
+            <div class="div40">Имя, фамилия</div>
+            <img class="vector-icon" alt="" src="{% static "public/vector-1@2x.png" %}" />
+          </div>
+          <div class="div41">
+            <div class="div42">Возраст</div>
+            <img class="child7" alt="" src="{% static "public/vector-2@2x.png" %}"/>
+          </div>
+          <div class="div43">
+            <div class="div44">Место пропажи</div>
+            <img class="child8" alt="" src="{% static "public/vector-21@2x.png" %}" />
+          </div>
+          <div class="div45">
+            <div class="div46">Условия пропажи</div>
+            <img class="child8" alt="" src="{% static "public/vector-22@2x.png" %}" />
+          </div>
+          <div class="div47">
+            <div class="div48">Доп. информайция</div>
+            <img class="child10" alt="" src="{% static "public/vector-23@2x.png" %}"/>
+          </div>
+        </div>
+        <div class="div49">
+          <button class="button4">
+            <b class="b10">Ребёнок</b>
+          </button>
+          <button class="button5">
+            <div class="div50">Взрослый</div>
+          </button>
+          <button class="button6">
+            <div class="div50">Питомец</div>
+          </button>
+        </div>
+        <b class="b11">Кто потерялся?</b>
+        <h3 class="h317">Заполнить анкету</h3>
+      </section>
+      <div class="child11"></div>
+      <h3 class="h318">Лента объявлений:</h3>
+      <img class="ellipse-icon" alt="" src="{% static "public/ellipse-14@2x.png" %}" />
+
+      <div class="child12"></div>
+      <div class="child13"></div>
+      <img class="rectangle-icon" alt="" src="{% static "public/rectangle-29@2x.png" %}" />
+
+      <div class="div52">
+        <div class="div4">
+          <p class="p">Викторов Иван</p>
+          <p class="p">27 лет</p>
+          <p class="p">Темные волосы, очки, голубые глаза</p>
+        </div>
+      </div>
+      <img class="icon3" alt="" src="{% static "public/4@2x.png" %}"/>
+
+      <img class="icon4" alt="" src="{% static "public/@2x.png" %}"/>
+
+      <div class="div54">
+        Нам очень важно, чтобы каждый из вас посодействовал в поиске этих людей
+        и питомцев. Важен каждый час. Не теряйте времени и скорее сообщите нам,
+        если вы видели этих людей или животных.
+      </div>
+      <section class="section6">
+        <img class="child14" alt="" src="{% static "public/rectangle-15@2x.png" %}" />
+
+        <img
+          class="unsplashrhh4dnfbwjo-icon"
+          alt=""
+          src="{% static "public/unsplashrhh4dnfbwjo@2x.png" %}"
+        />
+
+        <div class="div55">
+          <h2 class="h21">Есть вопросы? Задавайте!</h2>
+          <div class="div56">
+            <div class="div57">Введите имя:</div>
+            <img class="line-icon" alt="" src="{% static "public/line-6@2x.png" %}" />
+          </div>
+          <div class="e-mail">
+            <div class="div57">Введите e-mail:</div>
+          </div>
+          <img class="child15" alt="" src="{% static "public/line-7@2x.png" %}"/>
+
+          <div class="div58">
+            <div class="div57">Введите телефон:</div>
+            <img class="child16" alt="" src="{% static "public/line-8@2x.png" %}"/>
+          </div>
+          <div class="div60">
+            <div class="div57">Введите вопрос:</div>
+            <div class="line-div"></div>
+          </div>
+          <div class="div62">
+            <input class="child23" type="checkbox" />
+
+            <div class="div63">Я согласен на обработку персональных данных</div>
+          </div>
+          <div class="div64">
+            <input class="child23" type="checkbox" />
+
+            <div class="div63">Я согласен с политикой конфиденциальности</div>
+          </div>
+          <button class="button7">
+            <div class="child18"></div>
+            <img class="arrow-icon" alt="" src="{% static "public/arrow-2@2x.png" %}"/>
+          </button>
+        </div>
+      </section>
+      <div class="div66">
+        <div class="div67">
+          <img class="child19" alt="" src="{% static "public/vector_6@2x.png" %}" />
+
+          <img class="child20" alt="" src="{% static "public/vector_6@2x.png" %}"/>
+
+          <div class="div68">
+            <div class="div69">Сотрудничество</div>
+            <div class="div70">Финансовое</div>
+            <div class="div71">Волонтёрское</div>
+          </div>
+          <div class="div72">
+            <div class="div73">Сообщество</div>
+            <div class="div74">
+              <img class="vk-icon" alt="" src="{% static "public/vk@2x.png" %}" />
+
+              <div class="b">vk</div>
+            </div>
+            <div class="div75">
+              <img class="vk-icon" alt="" src="{% static "public/telegram@2x.png" %}"/>
+
+              <div class="b">telegram</div>
+            </div>
+            <div class="div76">
+              <img class="vk-icon" alt="" src="{% static "public/gmail@2x.png" %}"/>
+
+              <div class="b">FindMe@gmail.com</div>
+            </div>
+          </div>
+          <div class="div77">
+            <div class="div78">Услуги</div>
+            <div class="div79">Заполнить анкету</div>
+            <div class="div80">Просмотреть анкеты</div>
+            <div class="div81">Оставить заявку на вопрос</div>
+          </div>
+        </div>
+        <div class="div82">
+          <h1 class="findme1">FindMe</h1>
+          <img class="child21" alt="" src="{% static "public/vector-3@2x.png" %}"/>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,16 +1,31 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import LoginForm
+from crm.forms import OrderForm
+from crm.models import Order
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from cms.models import CmsSlider
 
 
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html', {'section': 'dashboard'})  # это у нас всё декортатор
+    form = OrderForm()
+    slider_list = CmsSlider.objects.all()
+    return render(request, 'account/dashboard.html',
+                  {'section': 'dashboard', 'form': form, 'slider_list': slider_list})  # это у нас всё декортатор
+
+
 # у нас как только мы входим на наш рабочий стол сайта, он проверяется на то, аутентифирован ли пользователь
 
 
+def thanks_page(request):
+    name_surname = request.POST['name_surname']
+    age = request.POST['age']
+    location = request.POST['location']
+    element = Order(order_name_surname=name_surname, order_age=age, order_location=location)
+    element.save()
+    return render(request, './thanks_page.html')
 
 
 def user_login(request):

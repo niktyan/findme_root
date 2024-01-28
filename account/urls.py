@@ -8,6 +8,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(), name='login'),  # встроенная функция от джанго для входа
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # встроенная функция от джанго для выхода
     path('', views.dashboard, name='dashboard'),
+    path('thanks/', views.thanks_page, name='thanks_page')
 ]
 
 
